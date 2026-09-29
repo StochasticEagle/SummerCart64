@@ -270,7 +270,7 @@ R0.12b (September 04, 2016)
 
   Made f_rename() be able to rename objects with the same name but case.
   Fixed an error in the case conversion teble of code page 866. (ff.c)
-  Fixed writing data is truncated at the file offset 4GiB on the exFAT volume. (appeared at R0.12)
+  Fixed writing data is truncated at the file offset 4GB on the exFAT volume. (appeared at R0.12)
   Fixed creating a file in the root directory of exFAT volume can fail. (appeared at R0.12)
   Fixed f_mkfs() creating exFAT volume with too small cluster size can collapse unallocated memory. (appeared at R0.12)
   Fixed wrong object name can be returned when read directory at Unicode cfg. (appeared at R0.12)

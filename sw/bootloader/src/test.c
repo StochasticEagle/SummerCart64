@@ -145,7 +145,7 @@ static void test_pi (void) {
 
     srand(random_seed);
 
-    display_printf("Testing %d write/read cycles of %dkiB to the SC64 buffer\n\n", count, size / 1024);
+    display_printf("Testing %d write/read cycles of %dKB to the SC64 buffer\n\n", count, size / 1024);
 
     for (int i = 0; i < count; i++) {
         fill_random(w_buffer, size, 0, 0);

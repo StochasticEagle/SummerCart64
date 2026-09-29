@@ -139,7 +139,7 @@ struct UploadArgs {
     #[arg(short, long)]
     direct: bool,
 
-    /// Do not put last 128 kiB of ROM inside flash memory (can corrupt non EEPROM saves)
+    /// Do not put last 128 KB of ROM inside flash memory (can corrupt non EEPROM saves)
     #[arg(short, long)]
     no_shadow: bool,
 
@@ -1207,19 +1207,19 @@ fn handle_test_command(connection: Connection) -> Result<(), sc64::Error> {
     print!(" Performing USB read speed test... ");
     stdout().flush().unwrap();
     let usb_read_speed = sc64.test_usb_speed(sc64::SpeedTestDirection::Read)?;
-    println!("{}", format!("{usb_read_speed:.2} MiB/s",).bright_green());
+    println!("{}", format!("{usb_read_speed:.2} MB/s",).bright_green());
 
     print!(" Performing USB write speed test... ");
     stdout().flush().unwrap();
     let usb_write_speed = sc64.test_usb_speed(sc64::SpeedTestDirection::Write)?;
-    println!("{}", format!("{usb_write_speed:.2} MiB/s",).bright_green());
+    println!("{}", format!("{usb_write_speed:.2} MB/s",).bright_green());
 
     println!("{}: SD card", "[SC64 Tests]".bold());
 
     print!(" Performing SD card read speed test... ");
     stdout().flush().unwrap();
     match sc64.test_sd_card() {
-        Ok(sd_read_speed) => println!("{}", format!("{sd_read_speed:.2} MiB/s",).bright_green()),
+        Ok(sd_read_speed) => println!("{}", format!("{sd_read_speed:.2} MB/s",).bright_green()),
         Err(result) => println!("{}", format!("error! {result}").bright_red()),
     }
 

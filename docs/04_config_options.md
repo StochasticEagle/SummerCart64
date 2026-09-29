@@ -28,7 +28,7 @@ All options other than **BOOTLOADER_SWITCH** are preserved on console reset or p
 | ---- | ----------------------- | ------- | ----------------------------------------------------------------------- |
 | `0`  | **BOOTLOADER_SWITCH**   | *bool*  | Switches between bootloader and ROM mapping on PI address `0x1000_0000` |
 | `1`  | **ROM_WRITE_ENABLE**    | *bool*  | Enables write access to ROM section                                     |
-| `2`  | **ROM_SHADOW_ENABLE**   | *bool*  | Enables overlapping last 128 kiB of ROM section by flash memory         |
+| `2`  | **ROM_SHADOW_ENABLE**   | *bool*  | Enables overlapping last 128 KB of ROM section by flash memory         |
 | `3`  | **DD_MODE**             | *enum*  | Enables 64DD register/IPL access                                        |
 | `4`  | **ISV_ADDRESS**         | *dword* | Sets IS-Viewer 64 watch address                                         |
 | `5`  | **BOOT_MODE**           | *enum*  | Controls bootloader behavior                                            |
@@ -70,11 +70,11 @@ Used by homebrew applications to freely replace data in SDRAM from N64 side.
 
 type: *bool* | default: `0`
 
-- `0` - Last 128 kiB of ROM section is mapped to SDRAM
-- `1` - Last 128 kiB of ROM section is mapped to flash
+- `0` - Last 128 KB of ROM section is mapped to SDRAM
+- `1` - Last 128 KB of ROM section is mapped to flash
 
-Last 128 kiB of SDRAM is shared between ROM data and SRAM/FlashRAM save data.
-Use this setting for applications requiring all of ROM section space including last 128 kiB.
+Last 128 KB of SDRAM is shared between ROM data and SRAM/FlashRAM save data.
+Use this setting for applications requiring all of ROM section space including last 128 KB.
 Check [PI memory map](./01_memory_map.md#pi-memory-map) for more information.
 
 ---
@@ -127,13 +127,13 @@ Value `4` will set CIC emulation to 64DD mode
 type: *enum* | default: `0`
 
 - `0` - All saves are disabled
-- `1` - EEPROM 4 kib save is enabled
-- `2` - EEPROM 16 kib save is enabled
-- `3` - SRAM 256 kib save is enabled
-- `4` - FlashRAM 1 Mib save is enabled
-- `5` - SRAM 768 kib save is enabled
-- `6` - SRAM 1 Mib save is enabled
-- `7` - FakeFlashRAM 1 Mib save is enabled (write/erase timings are not emulated and erase before write is not required)
+- `1` - EEPROM 4 KB save is enabled
+- `2` - EEPROM 16 KB save is enabled
+- `3` - SRAM 256 KB save is enabled
+- `4` - FlashRAM 1 MB save is enabled
+- `5` - SRAM 768 KB save is enabled
+- `6` - SRAM 1 MB save is enabled
+- `7` - FakeFlashRAM 1 MB save is enabled (write/erase timings are not emulated and erase before write is not required)
 
 Use this setting for selecting save type that will be emulated. Only one save type can be enabled.
 Any successful write to this config will disable automatic save writeback to the USB or SD card if previously enabled.

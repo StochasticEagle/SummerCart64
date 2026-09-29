@@ -6,8 +6,8 @@
 ## Features
 
  - **ROM and Save Memory On-board**
-   - 64 MiB SDRAM memory for game and save data (enough memory to support every retail game without compromise)
-   - 16 MiB FLASH memory for bootloader and extended game data (with extended memory flashcart supports game ROMs up to 78 MiB)
+   - 64 MB SDRAM memory for game and save data (enough memory to support every retail game without compromise)
+   - 16 MB FLASH memory for bootloader and extended game data (with extended memory flashcart supports game ROMs up to 78 MB)
 
  - **Game Saves**
    - EEPROM 4k/16k, SRAM and FlashRAM save types with an automatic writeback to the SD card (no reset button press required)
@@ -20,8 +20,8 @@
    - Dedicated open source menu written specifically for this flashcart - [N64FlashcartMenu](https://github.com/Polprzewodnikowy/N64FlashcartMenu)
 
  - **Game Development**
-   - ~23.8 MiB/s peak transfer rate SD card interface
-   - ~23.8 MiB/s peak transfer rate USB interface for data upload/download and debug functionality
+   - ~23.8 /s peak transfer rate SD card interface
+   - ~23.8 /s peak transfer rate USB interface for data upload/download and debug functionality
    - PC app to access the flashcart features:
      - Game/save data upload/download
      - Feature enable control
@@ -29,8 +29,8 @@
      - Access to the SD card
      - Firmware update
    - [UNFLoader](https://github.com/buu342/N64-UNFLoader) support
-   - IS-Viewer 64 debug interface (fixed 64 kiB buffer with a movable base address)
-   - 8 kiB on-chip buffer for general use
+   - IS-Viewer 64 debug interface (fixed 64 KB buffer with a movable base address)
+   - 8 KB on-chip buffer for general use
    - Status LED and button for general use
    - [UltraCIC_C](https://github.com/jago85/UltraCIC_C) emulation with automatic region switching and programmable seed/checksum values
    - N64 bootloader with support for IPL3 registers spoofing and loading menu from SD card

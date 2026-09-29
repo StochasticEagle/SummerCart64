@@ -865,7 +865,7 @@ impl SC64 {
     pub fn test_usb_speed(&mut self, direction: SpeedTestDirection) -> Result<f64, Error> {
         const TEST_ADDRESS: u32 = SDRAM_ADDRESS;
         const TEST_LENGTH: usize = 8 * 1024 * 1024;
-        const MIB_DIVIDER: f64 = 1024.0 * 1024.0;
+        const MB_DIVIDER: f64 = 1024.0 * 1024.0;
 
         let data = vec![0x00; TEST_LENGTH];
 
@@ -882,12 +882,12 @@ impl SC64 {
 
         let elapsed = time.elapsed();
 
-        Ok((TEST_LENGTH as f64 / MIB_DIVIDER) / elapsed.as_secs_f64())
+        Ok((TEST_LENGTH as f64 / MB_DIVIDER) / elapsed.as_secs_f64())
     }
 
     pub fn test_sd_card(&mut self) -> Result<f64, Error> {
         const TEST_LENGTH: usize = 4 * 1024 * 1024;
-        const MIB_DIVIDER: f64 = 1024.0 * 1024.0;
+        const MB_DIVIDER: f64 = 1024.0 * 1024.0;
 
         let mut data = vec![0x00; TEST_LENGTH];
 
@@ -922,7 +922,7 @@ impl SC64 {
             }
         }
 
-        Ok((TEST_LENGTH as f64 / MIB_DIVIDER) / elapsed.as_secs_f64())
+        Ok((TEST_LENGTH as f64 / MB_DIVIDER) / elapsed.as_secs_f64())
     }
 
     pub fn test_sdram_pattern(
